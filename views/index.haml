@@ -1,0 +1,50 @@
+!!!
+%html{:lang=>"en-US"}
+  %head
+    %link{:rel=>"stylesheet",:href=>"/stylesheets/style.css"}
+    %meta{'http-equiv' => 'Content-Type',
+      :content => 'text/html; charset=utf-8'}
+    %title
+      Image Tweak
+  %body
+    #wrapper
+      #header
+        %h1
+          Image Tweak
+      #main
+        #left_pane
+          %form{:method=>"post"}
+            %table
+              %tr
+                %td
+                  Image URL:
+                %td
+                  %input{:type=>"text",:name=>"image_url"}
+              %tr
+                %td
+                  Effect
+                %td
+                  %select{:name=>"task"}
+                    %option{:value=>"none"}
+                      None
+                    %option{:value=>"spread"}
+                      Spread
+                    %option{:value=>"flip_vertical"}
+                      Flip vertically
+                    %option{:value=>"flip_horizontal"}
+                      Flip horizontally
+                    %option{:value=>"frame"}
+                      Frame
+                    %option{:value=>"blur"}
+                      Blur
+                    %option{:value=>"wet_floor"}
+                      Wet floor
+                    %option{:value=>"polaroid"}
+                      Polaroid
+            %p
+              %input{:type=>"submit",:value=>"Tweak Image"}
+        #right_pane
+          -if @generated
+            %img{:src=>"/image.png"}
+      #footer
+        Copyright &copy; 2010

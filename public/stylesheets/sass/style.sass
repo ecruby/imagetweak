@@ -1,0 +1,24 @@
+=pane
+  float: left
+  width: 50%
+  padding: 10px 0
+
+body
+  background-color: #aaa
+
+#wrapper
+  background-color: #fff
+  width: 920px
+  margin: 0 auto
+  #header
+    border-bottom: 1px solid #ccc
+  #main
+    #left_pane
+      +pane
+    #right_pane
+      +pane
+      img
+        width: 100%
+  #footer
+    clear: both
+    border-top: 1px solid #ccc
