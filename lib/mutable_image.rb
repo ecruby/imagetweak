@@ -55,8 +55,13 @@ class MutableImage
   end
 
   def polaroid
-    @image[:caption] = "Great Times at RubyCamp 2010"
-    @image = @image.polaroid
+    @image = @image.border(20,30,"#ddd")
+    @image = @image.annotate(Magick::Draw.new,0,0,0,10,"Great Times at RubyCamp 2010") {
+      self.gravity = Magick::SouthGravity
+      self.pointsize = 16
+      self.fill = '#000'
+    }
+    @image = @image.rotate(-5)
   end
 
 end
